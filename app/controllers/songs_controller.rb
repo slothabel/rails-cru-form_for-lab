@@ -14,19 +14,19 @@ class SongsController < ApplicationController
     end
 
     def edit
-        # find_song
-        @song = Song.find(params.require(:id))
+        find_song
+        # @song = Song.find(params.require(:id))
 
     end
     
     def show
-        # find_song
-        @song = Song.find(params[:id])
+        find_song
+        # @song = Song.find(params[:id])
     end
     
     def update
-        # find_song
-        @song = Song.find(params.require(:id))
+        find_song
+        # @song = Song.find(params.require(:id))
         @song.update(song_params)
         @song.save
         redirect_to song_path(@song)
@@ -39,6 +39,7 @@ class SongsController < ApplicationController
     end
     
     def find_song
-        @song = Song.find(params.require(:id))
+        @song = Song.find(params[:id])
+
     end
 end
